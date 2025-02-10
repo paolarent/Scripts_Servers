@@ -136,7 +136,7 @@ options {
 EOL
 echo "Configurando BIND9..."
 
-# CONFIGURACIÓN DE LA ZONA DIRECTA
+#CONFIGURACIÓN DE LA ZONA DIRECTA
 ARCHIVO_ZONA="/etc/bind/db.$dominio"
 sudo bash -c "cat > $ARCHIVO_ZONA" <<EOL
 ;
