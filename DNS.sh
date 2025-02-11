@@ -192,9 +192,9 @@ EOL
 echo "Configurando la zona inversa..."
 
 #Agregar configuraciones a /etc/resolv.conf de manera segura
-echo "search $dominio" | sudo tee -a /etc/resolv.conf > /dev/null
+sudo sed -i "/^search /c\search $dominio" /etc/resolv.conf 
+sudo sed -i "/^nameserver /c\nameserver $ip" /etc/resolv.conf 
 echo "domain $dominio" | sudo tee -a /etc/resolv.conf > /dev/null
-echo "nameserver $ip" | sudo tee -a /etc/resolv.conf > /dev/null
 echo "options edns0 trust-ad" | sudo tee -a /etc/resolv.conf > /dev/null
 echo "Actualizando archivo resolv.conf"
 
